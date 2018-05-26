@@ -17,7 +17,9 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         checkPermission();
         MyLocListener list = new MyLocListener(this, "MC", "1085");
-        list.getData();
+        //list.getData();
+        DataReader reader = new DataReader(this);
+        reader.readFile();
     }
 
     public void checkPermission(){
