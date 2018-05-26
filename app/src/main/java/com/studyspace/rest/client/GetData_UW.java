@@ -17,10 +17,12 @@ public class GetData_UW {
     private String building, room;
     private final String uri = "https://api.uwaterloo.ca/v2";
     private RequestParams params;
+    private double [] origin;
 
 
-    public GetData_UW(Context ctx, String building, String room){
+    public GetData_UW(Context ctx, String building, String room, double [] origin){
         this.ctx = ctx;
+        this.origin = origin;
         this.building = building;
         this.room = room;
         this.params = new RequestParams();
@@ -68,8 +70,7 @@ public class GetData_UW {
                 Log.d("JSON Building: ", buildings.toString());
                 double lat = Double.valueOf(buildings.get("latitude").toString()), lng = Double.valueOf(buildings.get("longitude").toString());
                 double [] dest = {lat, lng};
-                double [] origin = {43.46579535,-80.54275113};
-                GetData_Distance dist = new GetData_Distance(ctx, origin, dest);
+                GetData_Distance dist = new GetData_Distance(ctx, origin, dest, building);
             }catch(Exception e) {
                 e.printStackTrace();
             }

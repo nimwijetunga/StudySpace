@@ -17,9 +17,11 @@ public class GetData_Distance {
     private final String uri = "https://maps.googleapis.com/maps/api/distancematrix";
     private RequestParams params;
     private Context ctx;
+    private String building;
 
     public GetData_Distance(Context ctx, double [] origin,
-                            double [] dest){//origin and dest are lat,long coords
+                            double [] dest, String building){//origin and dest are lat,long coords
+        this.building = building;
         this.ctx = ctx;
         this.origin = origin;
         this.dest = dest;
@@ -38,6 +40,7 @@ public class GetData_Distance {
         @Override
         public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
             Log.d("JSON Distance: ", response.toString());
+            Log.d("Building: ", building);
         }
     };
 
@@ -45,6 +48,7 @@ public class GetData_Distance {
         String endpoint = "/json";
         params.put("origins",origin[0]+","+origin[1]);
         params.put("destinations",dest[0]+","+dest[1]);
+        Log.d("Params :", params.toString());
         RestClientUsage dist_matrix = new RestClientUsage(ctx, uri, endpoint);
         dist_matrix.api_call(params, dist_handler);
     }
