@@ -40,7 +40,6 @@ public class GetData_Distance {
         @Override
         public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
             Log.d("JSON Distance: ", response.toString());
-            Log.d("Building: ", building);
         }
     };
 
