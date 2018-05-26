@@ -6,10 +6,12 @@ import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 
 
 public class MainActivity extends AppCompatActivity {
 
+    DB db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -17,8 +19,10 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         checkPermission();
         MyLocListener list = new MyLocListener(this, "MC", "1085");
-        //list.getData();
         DataReader reader = new DataReader(this);
+        db = new DB(this);
+        boolean b = db.insertData("uoft", "a","b",1234,1.234);
+        Log.d("Insert Progress: ", String.valueOf(b));
     }
 
     public void checkPermission(){
