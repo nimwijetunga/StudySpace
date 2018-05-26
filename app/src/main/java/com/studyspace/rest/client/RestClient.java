@@ -1,4 +1,4 @@
-package com.studyspace.studyspace;
+package com.studyspace.rest.client;
 import com.loopj.android.http.*;
 
 public class RestClient {

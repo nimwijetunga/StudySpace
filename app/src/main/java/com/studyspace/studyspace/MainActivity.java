@@ -3,7 +3,7 @@ package com.studyspace.studyspace;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-import com.loopj.android.http.RequestParams;
+import com.studyspace.rest.client.GetData_UW;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -11,9 +11,9 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        RequestParams params = new RequestParams();
-        params.put("key", "225e214a328f5477ca868b204939b37c");
-        RestClientUsage api = new RestClientUsage(this, "https://api.uwaterloo.ca/v2", "/buildings/list.json",
-               params);
+
+        String room_num = "1085", build_code = "MC";
+
+        GetData_UW data = new GetData_UW(this,build_code, room_num);
     }
 }
