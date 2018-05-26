@@ -4,23 +4,24 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/Login Page_background"
+    android:background = "@drawable/Path_1"
     tools:context=".MainActivity">
 
     <Button
-        android:id="@+id/button3"
+
+        android:id="@+id/SubmitLoginButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:text="SUBMIT"
+        android:background="@drawable/loginButton"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.894" />
+        app:layout_constraintVertical_bias="0.938" />
 
     <EditText
         android:id="@+id/PasswordEditText"
@@ -38,7 +39,7 @@
         app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.705" />
+        app:layout_constraintVertical_bias="0.8" />
 
     <EditText
         android:id="@+id/UsernameEditText"
@@ -56,6 +57,22 @@
         app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.55" />
+        app:layout_constraintVertical_bias="0.665" />
+
+    <ImageView
+        android:id="@+id/StudySpaceLogo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/ic_school_24px"
+        tools:layout_editor_absoluteX="100dp"
+        tools:layout_editor_absoluteY="143dp" />
+
+    <ImageView
+        android:id="@+id/StudySpaceTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/StudySpace"
+        tools:layout_editor_absoluteX="49dp"
+        tools:layout_editor_absoluteY="47dp" />
 
 </android.support.constraint.ConstraintLayout>
