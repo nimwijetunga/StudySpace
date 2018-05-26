@@ -70,7 +70,7 @@ public class GetData_UW {
                 Log.d("JSON Building: ", buildings.toString());
                 double lat = Double.valueOf(buildings.get("latitude").toString()), lng = Double.valueOf(buildings.get("longitude").toString());
                 double [] dest = {lat, lng};
-                //GetData_Distance dist = new GetData_Distance(ctx, origin, dest, building); //Limit API Key Use for Now
+                GetData_Distance dist = new GetData_Distance(ctx, origin, dest, building); //Limit API Key Use for Now
             }catch(Exception e) {
                 e.printStackTrace();
             }

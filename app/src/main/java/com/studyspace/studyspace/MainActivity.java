@@ -19,7 +19,6 @@ public class MainActivity extends AppCompatActivity {
         MyLocListener list = new MyLocListener(this, "MC", "1085");
         //list.getData();
         DataReader reader = new DataReader(this);
-        reader.readFile();
     }
 
     public void checkPermission(){
