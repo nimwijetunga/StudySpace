@@ -6,35 +6,31 @@ import android.util.Log;
 import org.json.*;
 import com.loopj.android.http.*;
 import cz.msebera.android.httpclient.Header;
-import cz.msebera.android.httpclient.message.BasicHeader;
 
 public class RestClientUsage {
 
     private Context context;
+    private String endpoint;
+    private RestClient client;
 
-    public RestClientUsage(Context context){
+    public RestClientUsage(Context context, String uri, String endpoint, RequestParams params){
+        this.client = new RestClient(uri);
+        this.endpoint = endpoint;
         this.context = context;
         try{
-            this.getPublicTimeline();
+            this.getPublicTimeline(params);
         }catch(Exception e) {
             e.printStackTrace();
         }
     }
 
-    public void getPublicTimeline() throws JSONException {
+    public void getPublicTimeline(RequestParams params) throws JSONException {
 
-        RequestParams params = new RequestParams();
-        //params.put("key", "w6tdfPABp2hDC5uVBMIf3ZM1AOqql0BU");//NEED TO REST KEY AFTER A WHILE
-        params.put("key", "225e214a328f5477ca868b204939b37c");
-        Header [] headers = new Header[2];
-        JSONObject tst = null;
-        headers[0] = new BasicHeader("key", "225e214a328f5477ca868b204939b37c");
-
-        RestClient.get("/buildings/list.json", params, new JsonHttpResponseHandler() {
+        this.client.get(this.endpoint, params, new JsonHttpResponseHandler() {
 
             @Override
             public void onFailure(int statusCode, Header[] headers, Throwable err, JSONObject response){
-                Log.d("Got Here", err.toString());
+                Log.d("Got Here Err", err.toString());
             }
 
             @Override
