@@ -9,18 +9,20 @@ import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.studyspace.rest.client.GetData_UW;
 
+import org.json.JSONObject;
+
+import cz.msebera.android.httpclient.Header;
+
 
 public class MyLocListener {
 
-    private String build_code, room_num;
     private Context ctx;
     private FusedLocationProviderClient mFusedLocationClient;
+    private DataReader reader;
 
-
-    public MyLocListener(Context ctx, String build_code, String room_num){
+    public MyLocListener(Context ctx, DataReader reader){
         this.ctx = ctx;
-        this.build_code = build_code;
-        this.room_num = room_num;
+        this.reader=reader;
     }
 
     public void getData(){
@@ -28,6 +30,7 @@ public class MyLocListener {
         try{
             mFusedLocationClient.getLastLocation()
                     .addOnSuccessListener(new OnSuccessListener<Location>() {
+
                         @Override
                         public void onSuccess(Location location) {
                             // Got last known location. In some rare situations this can be null.
@@ -37,16 +40,15 @@ public class MyLocListener {
                                 origin[0] = location.getLatitude();
                                 origin[1] = location.getLongitude();
                             }
-                            GetData_UW data = new GetData_UW(ctx,build_code, room_num, origin);
+                            GetData_UW data = new GetData_UW(ctx,reader, origin);
                             Log.d("Origin : ", origin[0] + " " + origin[1]);
                         }
                     });
         }catch(SecurityException e){
             Log.d("Using default location", "Waterloo");
             double [] origin = {43.4643,-80.5204};
-            GetData_UW data = new GetData_UW(ctx,build_code, room_num, origin);
+            GetData_UW data = new GetData_UW(ctx,reader, origin);
             Log.d("Origin : ", origin[0] + " " + origin[1]);
         }
     }
 }
-

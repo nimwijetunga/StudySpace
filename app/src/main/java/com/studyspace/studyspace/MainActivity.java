@@ -18,11 +18,10 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         checkPermission();
-        MyLocListener list = new MyLocListener(this, "MC", "1085");
-        DataReader reader = new DataReader(this);
         db = new DB(this);
-        boolean b = db.insertData("uoft", "a","b",1234,1.234);
-        Log.d("Insert Progress: ", String.valueOf(b));
+        DataReader reader = new DataReader(this);
+        MyLocListener list = new MyLocListener(this, reader);
+        //list.getData(); //Currently not calling API
     }
 
     public void checkPermission(){

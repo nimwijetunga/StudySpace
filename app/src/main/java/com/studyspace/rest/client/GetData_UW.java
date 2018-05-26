@@ -5,6 +5,7 @@ import android.util.Log;
 
 import com.loopj.android.http.JsonHttpResponseHandler;
 import com.loopj.android.http.RequestParams;
+import com.studyspace.studyspace.DataReader;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -20,15 +21,19 @@ public class GetData_UW {
     private double [] origin;
 
 
-    public GetData_UW(Context ctx, String building, String room, double [] origin){
+    public GetData_UW(Context ctx, DataReader reader, double [] origin){
         this.ctx = ctx;
         this.origin = origin;
         this.building = building;
         this.room = room;
         this.params = new RequestParams();
         this.params.put("key", "225e214a328f5477ca868b204939b37c");//Waterloo API Key
-        this.get_distances_list();
-        this.get_course_list();
+        for (String x : reader.getBuild_unique()){
+            this.get_distances_list(x);
+        }
+        for (int i=0; i<reader.getBuild().size(); i++){
+            this.get_course_list(reader.getBuild().get(i), reader.getRoom().get(i));
+        }
     }
 
     //Response Handler for COURSE api call;
@@ -78,22 +83,18 @@ public class GetData_UW {
 
     };
 
-    public void get_distances_list(){
+    public void get_distances_list(String building){
         String endpoint = "/buildings/"+building+".json";
         RestClientUsage build_api = new RestClientUsage(ctx,uri, endpoint);
         build_api.api_call(params, build_handler);
     }
 
 
-    public void get_course_list(){
+    public void get_course_list(String building, String room){
         String endpoint = "/buildings/"+building+"/"+room+"/"+"courses.json";
         RestClientUsage course_api = new RestClientUsage(ctx,uri, endpoint);
         course_api.api_call(params, course_handler);
 
     }
-
     //First Get Course Data
-
-
-
 }
