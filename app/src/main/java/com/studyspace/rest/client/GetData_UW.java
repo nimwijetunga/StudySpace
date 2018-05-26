@@ -66,6 +66,10 @@ public class GetData_UW {
             try{
                 JSONObject buildings = response.getJSONObject("data");
                 Log.d("JSON Building: ", buildings.toString());
+                double lat = Double.valueOf(buildings.get("latitude").toString()), lng = Double.valueOf(buildings.get("longitude").toString());
+                double [] dest = {lat, lng};
+                double [] origin = {43.46579535,-80.54275113};
+                GetData_Distance dist = new GetData_Distance(ctx, origin, dest);
             }catch(Exception e) {
                 e.printStackTrace();
             }
