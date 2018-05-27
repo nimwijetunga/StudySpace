@@ -2,21 +2,241 @@
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:background="@drawable/search_result_background"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/search_result_background"
     tools:context=".study_spot_results">
+
+    <Button
+        android:id="@+id/menu_button"
+        android:layout_width="48dp"
+        android:layout_height="34dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginTop="34dp"
+        android:background="@drawable/menu_icon"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/study_space_subtitle"
+        android:layout_width="167dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="34dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/study_space_subtitle" />
+
+    <Button
+        android:id="@+id/view_more_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="28dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:background="@drawable/view_more_button"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <ScrollView
         android:id="@+id/scroll_results"
-        android:layout_width="344dp"
-        android:layout_height="551dp"
-        tools:layout_editor_absoluteX="8dp"
-        tools:layout_editor_absoluteY="8dp">
+        android:layout_width="396dp"
+        android:layout_height="486dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical" />
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/location_result_one"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/location_background_small"
+                android:drawableLeft="@drawable/image_location"
+                android:fontFamily="sans-serif"
+                android:paddingRight="30dp"
+                android:text="E5-2319"
+                android:textAlignment="textEnd"
+                android:textColor="#7B7474"
+                android:textSize="36dp"
+                android:typeface="normal" />
+
+            <Button
+                android:id="@+id/location_result_two"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/location_background_small"
+                android:drawableLeft="@drawable/image_location"
+                android:fontFamily="sans-serif"
+                android:paddingRight="30dp"
+                android:text="E5-2319"
+                android:textAlignment="textEnd"
+                android:textColor="#7B7474"
+                android:textSize="36dp"
+                android:typeface="normal" />
+
+            <Button
+                android:id="@+id/location_result_three"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/location_background_small"
+                android:drawableLeft="@drawable/image_location"
+                android:fontFamily="sans-serif"
+                android:paddingRight="30dp"
+                android:text="E5-2319"
+                android:textAlignment="textEnd"
+                android:textColor="#7B7474"
+                android:textSize="36dp"
+                android:typeface="normal" />
+
+            <Button
+                android:id="@+id/location_result_four"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/location_background_small"
+                android:drawableLeft="@drawable/image_location"
+                android:fontFamily="sans-serif"
+                android:paddingRight="30dp"
+                android:text="E5-2319"
+                android:textAlignment="textEnd"
+                android:textColor="#7B7474"
+                android:textSize="36dp"
+                android:typeface="normal" />
+
+            <Button
+                android:id="@+id/location_result_five"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/location_background_small"
+                android:drawableLeft="@drawable/image_location"
+                android:fontFamily="sans-serif"
+                android:paddingRight="30dp"
+                android:text="E5-2319"
+                android:textAlignment="textEnd"
+                android:textColor="#7B7474"
+                android:textSize="36dp"
+                android:typeface="normal" />
+
+            <Button
+                android:id="@+id/location_result_six"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/location_background_small"
+                android:drawableLeft="@drawable/image_location"
+                android:fontFamily="sans-serif"
+                android:paddingRight="30dp"
+                android:text="E5-2319"
+                android:textAlignment="textEnd"
+                android:textColor="#7B7474"
+                android:textSize="36dp"
+                android:typeface="normal" />
+
+            <Button
+                android:id="@+id/location_result_seven"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/location_background_small"
+                android:drawableLeft="@drawable/image_location"
+                android:fontFamily="sans-serif"
+                android:paddingRight="30dp"
+                android:text="E5-2319"
+                android:textAlignment="textEnd"
+                android:textColor="#7B7474"
+                android:textSize="36dp"
+                android:typeface="normal" />
+
+            <Button
+                android:id="@+id/location_result_eight"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/location_background_small"
+                android:drawableLeft="@drawable/image_location"
+                android:fontFamily="sans-serif"
+                android:paddingRight="30dp"
+                android:text="E5-2319"
+                android:textAlignment="textEnd"
+                android:textColor="#7B7474"
+                android:textSize="36dp"
+                android:typeface="normal" />
+
+            <Button
+                android:id="@+id/location_result_nine"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/location_background_small"
+                android:drawableLeft="@drawable/image_location"
+                android:fontFamily="sans-serif"
+                android:paddingRight="30dp"
+                android:text="E5-2319"
+                android:textAlignment="textEnd"
+                android:textColor="#7B7474"
+                android:textSize="36dp"
+                android:typeface="normal" />
+
+            <Button
+                android:id="@+id/location_result_ten"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/location_background_small"
+                android:drawableLeft="@drawable/image_location"
+                android:fontFamily="sans-serif"
+                android:paddingRight="30dp"
+                android:text="E5-2319"
+                android:textAlignment="textEnd"
+                android:textColor="#7B7474"
+                android:textSize="36dp"
+                android:typeface="normal" />
+        </LinearLayout>
     </ScrollView>
+
 </android.support.constraint.ConstraintLayout>

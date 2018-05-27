@@ -12,12 +12,12 @@ public class select_page_home extends AppCompatActivity {
         setContentView(R.layout.activity_select_page_home);
     }
     public void Study_spot_results(View view){
-        android.content.Intent Study_spot_results = new android.content.Intent(this,study_spot_results_location.class);
+        android.content.Intent Study_spot_results = new android.content.Intent(this,study_spot_results.class);
         startActivity(Study_spot_results);
 
     }
     public void viewAll(View view){
-        android.content.Intent viewAll = new android.content.Intent(this,study_spot_results_location.class);
+        android.content.Intent viewAll = new android.content.Intent(this,study_spot_results.class);
         startActivity(viewAll);
 
     }
