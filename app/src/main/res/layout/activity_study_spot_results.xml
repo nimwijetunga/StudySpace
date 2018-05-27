@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@drawable/search_result_background"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".study_spot_results">
+
+    <ScrollView
+        android:id="@+id/scroll_results"
+        android:layout_width="344dp"
+        android:layout_height="551dp"
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="8dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" />
+    </ScrollView>
+</android.support.constraint.ConstraintLayout>
