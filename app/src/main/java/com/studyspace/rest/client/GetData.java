@@ -30,7 +30,7 @@ public class GetData {
         this.origin = origin;
         this.params = new RequestParams();
         GetData_Course courses;
-        this.params.put("key", "AIzaSyATKmpd42gAXy_I2tw7gXzVVWNkYOXmbkk");//Waterloo API Key
+        this.params.put("key", "d700c3f2ebfe38728836fe2cc6acde5e");//Waterloo API Key
         for (int i=0; i< reader.getBuild().size(); i++){
             building = reader.getBuild().get(i);
             used_loc.add(building);

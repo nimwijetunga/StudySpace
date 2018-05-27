@@ -44,6 +44,12 @@ public class GetData_Course {
             Log.d("API CALL FAILED: ", errorResponse.toString());
         }
 
+        public void onFailure(int statusCode, Header[] headers, String responseString, Throwable throwable) {
+            super.onFailure(statusCode, headers, responseString, throwable);
+            Log.d("Failed: ", ""+statusCode);
+            Log.d("Error : ", "" + throwable);
+        }
+
         @Override
         public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
 
@@ -63,7 +69,14 @@ public class GetData_Course {
     JsonHttpResponseHandler course_handler = new JsonHttpResponseHandler(){
 
         @Override
-        public void onFailure(int statusCode, Header[] headers, Throwable throwable, JSONArray errorResponse)
+        public void onFailure(int statusCode, Header[] headers, String responseString, Throwable throwable) {
+            super.onFailure(statusCode, headers, responseString, throwable);
+            Log.d("Failed: ", ""+statusCode);
+            Log.d("Error : ", "" + throwable);
+        }
+
+        @Override
+        public void onFailure(int statusCode, Header[] headers, Throwable throwable, JSONObject errorResponse)
         {
             Log.d("API CALL FAILED: ", errorResponse.toString());
         }
@@ -95,6 +108,7 @@ public class GetData_Course {
     };
 
     public void get_distances_list(String building){
+        Log.d("Here,", "Yay");
         String endpoint = "/buildings/"+building+".json";
         RestClientUsage build_api = new RestClientUsage(ctx,uri, endpoint);
         build_api.api_call(params, build_handler);
@@ -102,6 +116,7 @@ public class GetData_Course {
 
     public void get_course_list(String building, String room){
         String endpoint = "/buildings/"+building+"/"+room+"/"+"courses.json";
+        Log.d("Building: ", endpoint);
         RestClientUsage course_api = new RestClientUsage(ctx,uri, endpoint);
         course_api.api_call(params, course_handler);
     }
