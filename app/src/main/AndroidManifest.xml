@@ -33,6 +33,7 @@
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
 
+<<<<<<< HEAD
         <activity android:name=".individual_location_page" />
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
@@ -52,6 +53,8 @@
              sign the APK for publishing.
              You can define the keys for the debug and release targets in src/debug/ and src/release/. 
         -->
+=======
+>>>>>>> b25b8a0a2d0807c2daa689b473752da922472bf8
     </application>
 
 </manifest>
