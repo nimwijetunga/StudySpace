@@ -19,8 +19,8 @@
 
     <ImageView
         android:id="@+id/study_space_subtitle"
-        android:layout_width="167dp"
-        android:layout_height="32dp"
+        android:layout_width="186dp"
+        android:layout_height="50dp"
         android:layout_marginStart="28dp"
         android:layout_marginTop="34dp"
         app:layout_constraintStart_toStartOf="parent"

@@ -10,4 +10,6 @@ public class individual_location_page extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_individual_location_page);
     }
+
+    
 }
