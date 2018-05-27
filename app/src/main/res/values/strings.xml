@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">StudySpace</string>
+    <string name="title_activity_select_page">select_page</string>
 </resources>
