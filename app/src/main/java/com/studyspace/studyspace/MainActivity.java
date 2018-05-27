@@ -6,12 +6,11 @@ import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 
 
 public class MainActivity extends AppCompatActivity {
 
-    DB db;
+    public static DB db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,7 +20,8 @@ public class MainActivity extends AppCompatActivity {
         db = new DB(this);
         DataReader reader = new DataReader(this);
         MyLocListener list = new MyLocListener(this, reader);
-        //list.getData(); //Currently not calling API
+        db.updateData("2", "UW", "5", "5", 123, 12.3);
+        //list.getData(); //API Call(s)
     }
 
     public void checkPermission(){

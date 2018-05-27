@@ -10,7 +10,7 @@ public class DB extends SQLiteOpenHelper {
 
     public static final String data_DB = "Buildings.db";
     public static final String table = "Buildings_table";
-    public static final String col1 = "id";
+    public static final String col1 = "ID";
     public static final String col2 = "Building";
     public static final String col3 = "Time_start";
     public static final String col4 = "Time_end";
@@ -56,6 +56,19 @@ public class DB extends SQLiteOpenHelper {
             return false;
         else
             return true;
+    }
+
+    public boolean updateData(String id, String building, String st, String end, int course, double dist) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues cv= new ContentValues();
+        cv.put(col1, id);
+        cv.put(col2, building);
+        cv.put(col3, st);
+        cv.put(col4, end);
+        cv.put(col5, course);
+        cv.put(col6, dist);
+        db.update(table, cv, "ID = ?", new String[] {id});
+        return true;
     }
 
 
