@@ -83,7 +83,7 @@ public class GetData_Course {
 
         @Override
         public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
-
+                Log.d("JSON: ", response.toString());
             try{
                 JSONArray classes = response.getJSONArray("data");
                 int len = 5;
