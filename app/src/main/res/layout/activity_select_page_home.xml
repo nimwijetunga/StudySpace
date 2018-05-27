@@ -52,7 +52,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.289"
         app:srcCompat="@drawable/study_space_explanation_text" />
-
+    
     <Button
         android:id="@+id/menu_dropdown"
         android:layout_width="38dp"
@@ -65,6 +65,7 @@
 
     <Button
         android:id="@+id/study_spot_button"
+        android:onClick = "Study_spot_results"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
@@ -80,6 +81,7 @@
 
     <Button
         android:id="@+id/view_all_button"
+        android:onClick="viewAll"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
