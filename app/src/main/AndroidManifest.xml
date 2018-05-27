@@ -20,7 +20,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".select_page_home"></activity>
+        <activity android:name=".select_page_home" />
+        <activity android:name=".study_spot_results" />
+        <activity android:name=".study_spot_results_location"></activity>
     </application>
 
 </manifest>
