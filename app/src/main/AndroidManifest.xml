@@ -13,20 +13,30 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity"
-                android:screenOrientation="portrait">
+        <activity
+            android:name=".MainActivity"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity   android:name=".select_page_home"
-                    android:screenOrientation="portrait" />
-        <activity   android:name=".study_spot_results"
-                    android:screenOrientation="portrait" />
-        <activity   android:name=".study_spot_results_location"
-                    android:screenOrientation="portrait" ></activity>
+        <activity
+            android:name=".select_page_home"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".study_spot_results"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".study_spot_results_location"
+            android:screenOrientation="portrait" />
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
+
+        <activity android:name=".individual_location_page"></activity>
     </application>
 
 </manifest>
