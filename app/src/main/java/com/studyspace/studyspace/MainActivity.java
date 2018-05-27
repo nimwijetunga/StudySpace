@@ -6,7 +6,12 @@ import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
+
+import com.studyspace.rest.client.GetData_Distance;
+
+import java.util.ArrayList;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -21,7 +26,17 @@ public class MainActivity extends AppCompatActivity {
         db = new DB(this);
         DataReader reader = new DataReader(this);
         MyLocListener list = new MyLocListener(this, reader);
-        list.getData(); //API Call(s)
+
+        if(db.isEmpty()) {
+            Log.d("Empty DB: ", "Search");
+            list.getData(); //API Call(s)
+        }else{
+            ArrayList<FrontendData> data = db.get_data_list();
+            for(FrontendData i : data){
+                Log.d("Properties: ", i.getBuild() + " " + i.getRoom() + i.getDist());
+            }
+            Log.d("DB Full", "No Search");
+        }
     }
 
     public void checkPermission(){

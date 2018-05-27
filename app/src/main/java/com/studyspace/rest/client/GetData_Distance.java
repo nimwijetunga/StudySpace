@@ -10,6 +10,8 @@ import com.studyspace.studyspace.MainActivity;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
+import java.util.ArrayList;
+
 import cz.msebera.android.httpclient.Header;
 
 public class GetData_Distance {
@@ -21,13 +23,19 @@ public class GetData_Distance {
     private String building;
 
     public GetData_Distance(Context ctx, double [] origin,
-                            double [] dest, String building){//origin and dest are lat,long coords
+                            double [] dest, String building, ArrayList<String> used_build){//origin and dest are lat,long coords
         this.building = building;
         this.ctx = ctx;
         this.origin = origin;
         this.dest = dest;
         this.params = new RequestParams();
-        this.params.put("key", "AIzaSyATKmpd42gAXy_I2tw7gXzVVWNkYOXmbkk");//Google API Key
+        this.params.put("key", "AIzaSyDNtry88Bt7DX1o2Dzurc1g7ZuFAtqThGc");//Google API Key
+//        double dist = MainActivity.db.get_dist(building);
+//        if(dist != -1.0){
+//            Log.d("Found Dist: ", String.valueOf(dist));
+//            MainActivity.db.update_dist(dist, building);
+//            return;
+//        } //Work in Progress (Efficent API Calls)
         this.get_dist();
     }
 
@@ -40,7 +48,6 @@ public class GetData_Distance {
 
         @Override
         public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
-            //Log.d("JSON Distance: ", response.toString());
             try{
                 JSONArray rows = response.getJSONArray("rows");
                 JSONObject obj = rows.getJSONObject(0);
@@ -49,7 +56,7 @@ public class GetData_Distance {
                 JSONObject dist = obj_2.getJSONObject("distance");
                 double dist_val = (double) dist.getInt("value");
                 Log.d("Distance: ", String.valueOf(dist_val));
-                //MainActivity.db.update_dist(dist_val, building);
+                MainActivity.db.update_dist(dist_val, building);
             }catch(Exception e){
                 e.printStackTrace();
             }
@@ -60,7 +67,6 @@ public class GetData_Distance {
         String endpoint = "/json";
         params.put("origins",origin[0]+","+origin[1]);
         params.put("destinations",dest[0]+","+dest[1]);
-        Log.d("Params :", params.toString());
         RestClientUsage dist_matrix = new RestClientUsage(ctx, uri, endpoint);
         dist_matrix.api_call(params, dist_handler);
     }
