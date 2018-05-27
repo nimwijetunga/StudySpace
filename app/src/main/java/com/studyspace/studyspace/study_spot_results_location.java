@@ -2,6 +2,7 @@ package com.studyspace.studyspace;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 
 public class study_spot_results_location extends AppCompatActivity {
 
@@ -10,4 +11,5 @@ public class study_spot_results_location extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_study_spot_results_location);
     }
+
 }
