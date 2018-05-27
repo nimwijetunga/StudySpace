@@ -83,19 +83,18 @@ public class GetData_Course {
 
         @Override
         public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
-                Log.d("JSON: ", response.toString());
             try{
                 JSONArray classes = response.getJSONArray("data");
                 int len = 5;
                 if(classes.length() < 5) len = classes.length();
-                for(int i = 0; i < 0 ;i++){
+                for(int i = 0; i < len ;i++){
                     JSONObject obj = (JSONObject) classes.getJSONObject(i);
                     int course_code = obj.getInt("class_number");
                     String start_time = obj.getString("start_time");
                     String end_time = obj.getString("end_time");
                     String build_code = obj.getString("building");
                     String room = obj.getString("room");
-                    Log.i("cc, st, et, bc, rm", course_code + " " + start_time + " " + end_time + " "
+                    Log.d("cc, st, et, bc, rm", course_code + " " + start_time + " " + end_time + " "
                             + build_code + " " + room);
                     MainActivity.db.insertData(building, start_time, end_time, course_code, -1.0, room);
                     get_distances_list(building);

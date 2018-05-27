@@ -29,7 +29,7 @@ public class GetData_Distance {
         this.origin = origin;
         this.dest = dest;
         this.params = new RequestParams();
-        this.params.put("key", "AIzaSyDNtry88Bt7DX1o2Dzurc1g7ZuFAtqThGc");//Google API Key
+        this.params.put("key", "AIzaSyDfluUsxpHauw41nPXWETJw7WOC1K_uNOw");//Google API Key
 //        double dist = MainActivity.db.get_dist(building);
 //        if(dist != -1.0){
 //            Log.d("Found Dist: ", String.valueOf(dist));

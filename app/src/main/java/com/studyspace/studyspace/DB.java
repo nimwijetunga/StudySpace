@@ -79,7 +79,6 @@ public class DB extends SQLiteOpenHelper {
     }
 
 
-
     public double get_dist(String building){
         SQLiteDatabase db = this.getWritableDatabase();
         String[] params = {"-1", building};

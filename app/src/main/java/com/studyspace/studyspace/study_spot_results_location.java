@@ -12,4 +12,9 @@ public class study_spot_results_location extends AppCompatActivity {
         setContentView(R.layout.activity_study_spot_results_location);
     }
 
+    public void menu_icon(View view){
+        android.content.Intent menu_icon = new android.content.Intent(this,MainActivity.class);
+        startActivity(menu_icon);
+    }
+
 }
