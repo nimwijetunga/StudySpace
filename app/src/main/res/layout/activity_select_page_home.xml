@@ -56,11 +56,14 @@
 
     <ImageView
         android:id="@+id/imageView4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="252dp"
+        android:layout_width="468dp"
+        android:layout_height="328dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="32dp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/welcome_text"
         app:srcCompat="@drawable/button_profile_background" />
 
     <Button
@@ -75,6 +78,7 @@
 
     <Button
         android:id="@+id/study_spot_button"
+        android:onClick = "Study_spot_results"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
@@ -90,6 +94,7 @@
 
     <Button
         android:id="@+id/view_all_button"
+        android:onClick="viewAll"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
