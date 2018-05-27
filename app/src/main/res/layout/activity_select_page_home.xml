@@ -8,6 +8,16 @@
     tools:context=".select_page_home">
 
     <ImageView
+        android:id="@+id/profile_background"
+        android:layout_width="449dp"
+        android:layout_height="379dp"
+        android:scaleType="fitXY"
+        app:srcCompat="@drawable/button_profile_background"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="290dp" />
+
+
+    <ImageView
         android:id="@+id/welcome_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -52,7 +62,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.289"
         app:srcCompat="@drawable/study_space_explanation_text" />
-    
+
     <Button
         android:id="@+id/menu_dropdown"
         android:layout_width="38dp"
@@ -99,17 +109,11 @@
         android:id="@+id/imageView5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.508"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.98"
-        app:srcCompat="@drawable/study_profile_background" />
+        app:srcCompat="@drawable/study_profile_background"
+        tools:layout_editor_absoluteX="63dp"
+        tools:layout_editor_absoluteY="482dp" />
+
+  >
 
     <ImageView
         android:id="@+id/profile_background"
@@ -144,17 +148,14 @@
     <ImageView
         android:id="@+id/profile_icon"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
+        android:layout_height="23dp"
+        android:layout_marginBottom="136dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.16"
+        app:layout_constraintHorizontal_bias="0.222"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.778"
         app:srcCompat="@drawable/study_profile_text" />
 
     <Button
@@ -168,10 +169,10 @@
         android:background="@drawable/close_icon"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.859"
+        app:layout_constraintHorizontal_bias="0.833"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.773" />
+        app:layout_constraintVertical_bias="0.775" />
 
     <ImageView
         android:id="@+id/imageView11"
@@ -185,13 +186,6 @@
         app:srcCompat="@drawable/spots_days_reviews"
         tools:layout_editor_absoluteY="575dp" />
 
-    <ImageView
-        android:id="@+id/imageView14"
-        android:layout_height="674dp"
-        android:scaleType="fitXY"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/review_background"
-        tools:layout_editor_absoluteY="300dp" />
+
+
 </android.support.constraint.ConstraintLayout>
