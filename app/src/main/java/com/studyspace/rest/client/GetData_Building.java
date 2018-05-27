@@ -6,7 +6,6 @@ import android.util.Log;
 import com.loopj.android.http.JsonHttpResponseHandler;
 import com.loopj.android.http.RequestParams;
 import com.studyspace.studyspace.DataReader;
-import com.studyspace.studyspace.MainActivity;
 
 import org.json.JSONArray;
 import org.json.JSONObject;

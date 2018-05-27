@@ -27,7 +27,7 @@ public class GetData_Distance {
         this.origin = origin;
         this.dest = dest;
         this.params = new RequestParams();
-        this.params.put("key", "AIzaSyATKmpd42gAXy_I2tw7gXzVVWNkYOXmbkk");//Google API Key
+        this.params.put("key", "AIzaSyA_3YEpwxmQnbEkR3cFdvP2MWtRcHbW8zs");//Google API Key
         this.get_dist();
     }
 

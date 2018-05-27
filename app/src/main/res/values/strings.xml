@@ -2,4 +2,5 @@
     <string name="app_name">StudySpace</string>
     <string name="title_activity_select_page">select_page</string>
     <string name="title_activity_study_spot_location">Map</string>
+    <string name="title_activity_maps">Map</string>
 </resources>
