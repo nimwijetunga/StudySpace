@@ -17,7 +17,7 @@ public class select_page_home extends AppCompatActivity {
 
     }
     public void viewAll(View view){
-        android.content.Intent viewAll = new android.content.Intent(this,study_spot_results_location.class);
+        android.content.Intent viewAll = new android.content.Intent(this,study_spot_results.class);
         startActivity(viewAll);
 
     }
