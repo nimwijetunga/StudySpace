@@ -7,11 +7,7 @@ import android.util.Log;
 import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.tasks.OnSuccessListener;
-import com.studyspace.rest.client.GetData_UW;
-
-import org.json.JSONObject;
-
-import cz.msebera.android.httpclient.Header;
+import com.studyspace.rest.client.GetData_Building;
 
 
 public class MyLocListener {
@@ -40,14 +36,14 @@ public class MyLocListener {
                                 origin[0] = location.getLatitude();
                                 origin[1] = location.getLongitude();
                             }
-                            GetData_UW data = new GetData_UW(ctx,reader, origin);
+                            GetData_Building data = new GetData_Building(ctx,reader, origin);
                             Log.d("Origin : ", origin[0] + " " + origin[1]);
                         }
                     });
         }catch(SecurityException e){
             Log.d("Using default location", "Waterloo");
             double [] origin = {43.4643,-80.5204};
-            GetData_UW data = new GetData_UW(ctx,reader, origin);
+            GetData_Building data = new GetData_Building(ctx,reader, origin);
             Log.d("Origin : ", origin[0] + " " + origin[1]);
         }
     }

@@ -6,57 +6,36 @@ import android.util.Log;
 import com.loopj.android.http.JsonHttpResponseHandler;
 import com.loopj.android.http.RequestParams;
 import com.studyspace.studyspace.DataReader;
+import com.studyspace.studyspace.MainActivity;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
 
 import cz.msebera.android.httpclient.Header;
 
-public class GetData_UW {
+public class GetData_Building {
 
     private Context ctx;
-    private String building, room;
+    private String building;
     private final String uri = "https://api.uwaterloo.ca/v2";
     private RequestParams params;
     private double [] origin;
 
 
-    public GetData_UW(Context ctx, DataReader reader, double [] origin){
+    public GetData_Building(Context ctx, DataReader reader, double [] origin){
         this.ctx = ctx;
         this.origin = origin;
-        this.building = building;
-        this.room = room;
         this.params = new RequestParams();
+        GetData_Course courses;
         this.params.put("key", "225e214a328f5477ca868b204939b37c");//Waterloo API Key
+        for (int i=0; i<reader.getBuild().size(); i++){
+            building = reader.getBuild().get(i);
+            courses = new GetData_Course(ctx, uri,building,params,reader.getRoom().get(i));
+        }
         for (String x : reader.getBuild_unique()){
             this.get_distances_list(x);
         }
-        for (int i=0; i<reader.getBuild().size(); i++){
-            this.get_course_list(reader.getBuild().get(i), reader.getRoom().get(i));
-        }
     }
-
-    //Response Handler for COURSE api call;
-    JsonHttpResponseHandler course_handler = new JsonHttpResponseHandler(){
-
-        @Override
-        public void onFailure(int statusCode, Header[] headers, Throwable throwable, JSONArray errorResponse)
-        {
-            Log.d("API CALL FAILED: ", errorResponse.toString());
-        }
-
-        @Override
-        public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
-
-            try{
-                JSONArray classes = response.getJSONArray("data");
-                Log.d("JSON Classes: ", classes.toString());
-            }catch(Exception e) {
-                e.printStackTrace();
-            }
-        }
-
-    };
 
     //Response Handler for BUILDINGS API
     JsonHttpResponseHandler build_handler = new JsonHttpResponseHandler(){
@@ -72,10 +51,10 @@ public class GetData_UW {
 
             try{
                 JSONObject buildings = response.getJSONObject("data");
-                Log.d("JSON Building: ", buildings.toString());
+                //Log.d("JSON Building: ", buildings.toString());
                 double lat = Double.valueOf(buildings.get("latitude").toString()), lng = Double.valueOf(buildings.get("longitude").toString());
                 double [] dest = {lat, lng};
-                GetData_Distance dist = new GetData_Distance(ctx, origin, dest, building); //Limit API Key Use for Now
+                //GetData_Distance dist = new GetData_Distance(ctx, origin, dest, building); //Limit API Key Use for Now
             }catch(Exception e) {
                 e.printStackTrace();
             }
@@ -88,13 +67,4 @@ public class GetData_UW {
         RestClientUsage build_api = new RestClientUsage(ctx,uri, endpoint);
         build_api.api_call(params, build_handler);
     }
-
-
-    public void get_course_list(String building, String room){
-        String endpoint = "/buildings/"+building+"/"+room+"/"+"courses.json";
-        RestClientUsage course_api = new RestClientUsage(ctx,uri, endpoint);
-        course_api.api_call(params, course_handler);
-
-    }
-    //First Get Course Data
 }

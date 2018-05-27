@@ -20,8 +20,7 @@ public class MainActivity extends AppCompatActivity {
         db = new DB(this);
         DataReader reader = new DataReader(this);
         MyLocListener list = new MyLocListener(this, reader);
-        db.updateData("2", "UW", "5", "5", 123, 12.3);
-        //list.getData(); //API Call(s)
+        list.getData(); //API Call(s)
     }
 
     public void checkPermission(){

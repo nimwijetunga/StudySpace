@@ -58,6 +58,14 @@ public class DB extends SQLiteOpenHelper {
             return true;
     }
 
+    public boolean update_dist(double dist, String build_code){
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues cv = new ContentValues();
+        cv.put(col6, dist);
+        db.update(table, cv, "Building = ?", new String[]{build_code});
+        return true;
+    }
+
     public boolean updateData(String id, String building, String st, String end, int course, double dist) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues cv= new ContentValues();
@@ -70,7 +78,4 @@ public class DB extends SQLiteOpenHelper {
         db.update(table, cv, "ID = ?", new String[] {id});
         return true;
     }
-
-
-
 }
