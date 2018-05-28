@@ -16,5 +16,5 @@ Please install the debug-apk on your phone to use the app or you may clone the r
 
 * **Taha Masood - Frontend**
 * **Benjamin Shaw - Frontend**
-* *Omair Sandhu - Backend**
+* **Omair Sandhu - Backend**
 * **Taha Masood - Backend**
